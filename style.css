@@ -1,0 +1,304 @@
+/* Hey! Welcome to the 'other side'. See anything funky in my code, don't hesitate to let me know! */
+
+/* INDEX
+
+- CSS Variables -  overall site
+- Media Queries
+- Navigation
+  -  Image Hover Main Settings
+    - Image Hover Effect
+- About
+- Portfolio
+- Contact me
+*/
+
+
+/* CSS Variables - overall site */
+
+body {
+  background: #DCDFE4;
+  margin: 10px 30px;
+  line-height: 1.5;
+  color: #FFF;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1em;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Roboto Condensed', arial, helvetica, sans-serif;
+  font-size: 2em;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', arial, helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Media Queries */
+
+@media(max-width: 700px) {
+
+  nav {
+    position: absolute; /* or choose `absolute` depending on desired behavior*/
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    left: -340px;
+    transition: transform .3s ease-in-out;
+  }
+
+  .portfolio {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .grid {
+    max-width: 480px;
+  }
+
+  body {
+    margin: 0px 10px 10px 10px;
+
+  }
+
+}
+
+/* Navigation */
+
+nav a{
+  background: #2f3238;
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+nav a:hover {
+  background: #FFF;
+  color: #2F545F;
+}
+
+nav ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.toggle {
+    display: none;
+  }
+
+/* About  */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding: 1em;
+  background: url("About Background Keyboard.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.about img {
+  display: inline-block;
+  margin: auto;
+  width: 500px;
+}
+
+/* Portfolio */
+
+.portfolio {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+span {
+    color: #FFF;
+    padding: 10px;
+    border: none;
+    border-color: #FFF;
+    display: inline-block;
+    background: #95A4A6;
+    opacity: 1;
+}
+
+/* Image Hover Main Settings */
+
+.grid figure {
+	position: relative;
+	overflow: hidden;
+	margin: 0px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	display: block;
+  min-height: 400px;
+  overflow: hidden;
+	width: auto;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor covers the whole item by default */
+
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+}
+
+/* Image Hover Effect */
+
+
+figure.hover-portfolio {
+	background: #2f3238;
+}
+
+figure.hover-portfolio img {
+	max-width: none;
+	height: 100%;
+	-webkit-transition: opacity 1s, -webkit-transform 1s;
+	transition: opacity 1s, transform 1s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+figure.hover-portfolio figcaption {
+	text-align: left;
+}
+
+figure.hover-portfolio p {
+	display: inline-block;
+	margin: 0 0 0.25em;
+	padding: 0.4em 1em;
+	background: rgba(255,255,255,0.9);
+	color: #2f3238;
+	text-transform: none;
+	font-weight: 500;
+	font-size: 75%;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-360px,0,0);
+	transform: translate3d(-360px,0,0);
+}
+
+figure.hover-portfolio p:first-child {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+figure.hover-portfolio p:nth-of-type(2) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+figure.hover-portfolio p:nth-of-type(3) {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+figure.hover-portfolio:hover p:first-child {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+figure.hover-portfolio:hover p:nth-of-type(2) {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+figure.hover-portfolio:hover p:nth-of-type(3) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+figure.hover-portfolio:hover img {
+	opacity: 0.35;
+	-webkit-transform: scale3d(1.1,1.1,1);
+	transform: scale3d(1.1,1.1,1);
+}
+
+figure.hover-portfolio:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+/* Contact me */
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1em;
+  background: #2F545F;
+  opacity: 0.5;
+}
+
+.contact a {
+  color: #FFF;
+}
+
+/* Footer */
+
+footer {
+  display: grid;
+  text-align: center;
+  padding: 1em;
+}
+
+footer a {
+  text-decoration: none;
+  padding: 0.3rem;
+  color: #2F545F;
+  opacity: 0.5;
+}
