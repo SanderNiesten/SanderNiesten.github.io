@@ -4,12 +4,11 @@
 
 - CSS Variables -  overall site
 - Navigation
-  -  Image Hover Main Settings
-    - Image Hover Effect
 - About
 - Portfolio
+  - Figure, Image, Figcaption
 - Contact me
-- Media Queries
+- Media Queries and mobile navigation
 */
 
 
@@ -22,10 +21,10 @@ body
     margin: 10px 30px;
 
     color: #fff;
-    background-image: url("About background 2.jpeg");
+    background-image: url('About background 2.jpeg');
+    background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -55,11 +54,6 @@ html
     box-sizing: border-box;
 }
 
-img
-{
-    max-width: 100%;
-}
-
 /* Navigation */
 
 nav a
@@ -77,8 +71,6 @@ nav a
 
     color: #fff;
     background: #2f3238;
-
-
 }
 
 nav a:hover
@@ -91,13 +83,16 @@ nav a:hover
 
 /* About  */
 
-.a {
+.a
+{
     grid-area: a;
 }
-.b {
+.b
+{
     grid-area: b;
 }
-.c {
+.c
+{
     grid-area: c;
 }
 
@@ -111,46 +106,43 @@ nav a:hover
     grid-auto-rows: auto auto 1fr;
     grid-template-columns: 1fr;
     grid-gap: 20px;
-    grid-template-areas:
-      "a"
-      "b"
-      "c";
+    grid-template-areas: 'a'
+    'b'
+    'c';
 }
-.about > div {
-    background-color: rgba(114, 133, 144, 0.95);
+.about > div
+{
     padding: 1em;
+
+    background-color: rgba(114, 133, 144, .95);
+}
+
+#profile-picture
+{
+    display: inline-block;
+
+    box-sizing: border-box;
+    max-width: 100%;
+
+    border-width: 4px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 50%;
+}
+
+.c
+{
+    display: grid;
+
     justify-items: center;
     align-items: center;
 }
 
-.b {
-  padding-top: auto;
-  padding-bottom: auto;
-  align-self: start;
-}
+.fa-file-alt
+{
+    font-size: 3.5em;
 
-#profile-picture {
-  display: inline-block;
-  max-width: 100%;
-  border-radius: 50%;
-  box-sizing: border-box;
-  border-style: solid;
-  border-width: 4px;
-  border-color: white;
-}
-
-.c {
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  justify-self: stretch;
-}
-
-.fa-file-alt {
-  font-size: 3.5em;
-  color: white;
-  justify-items: center;
-  align-items: center;
+    color: white;
 }
 
 /* Portfolio */
@@ -163,68 +155,7 @@ nav a:hover
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-span
-{
-    display: inline-block;
-
-    padding: 10px;
-
-    opacity: 1;
-    color: #fff;
-    border: none;
-    border-color: #fff;
-    background: #95a4a6;
-}
-
-/* Image Hover Main Settings */
-
-figure.effect-sadie figcaption::before {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
-	content: '';
-	opacity: 0;
-	transform: translate3d(0,50%,0);
-}
-
-figure.effect-sadie h2 {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	width: 100%;
-	color: #484c61;
-	transition: transform 0.35s, color 0.35s;
-	transform: translate3d(0,-50%,0);
-}
-
-figure.effect-sadie figcaption::before,
-figure.effect-sadie p {
-	transition: opacity 0.35s, transform 0.35s;
-}
-
-figure.effect-sadie p {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	padding: 2em;
-	width: 100%;
-	opacity: 0;
-	transform: translate3d(0,10px,0);
-}
-
-figure.effect-sadie:hover h2 {
-	color: #fff;
-	transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
-}
-
-figure.effect-sadie:hover figcaption::before ,
-figure.effect-sadie:hover p {
-	opacity: 1;
-	transform: translate3d(0,0,0);
-}
+/* Portofolio - Figure, Image, Figcaption */
 
 .grid figure
 {
@@ -235,7 +166,6 @@ figure.effect-sadie:hover p {
     margin: 0;
 
     cursor: pointer;
-    text-align: center;
 }
 
 .grid figure img
@@ -244,11 +174,39 @@ figure.effect-sadie:hover p {
     overflow: hidden;
 
     width: auto;
-    min-height: 400px;
+    height: 400px;
 
-    opacity: .8;
+    transition: .2s ease-in-out;
+
+    object-fit: cover;
 }
 
+.grid figure img:hover
+{
+    overflow: hidden;
+
+    transition: .2s ease-in-out;
+    -webkit-transform: scale(1.1);
+       -moz-transform: scale(1.1);
+            transform: scale(1.05);
+
+    filter: brightness(60%);
+}
+
+figcaption
+{
+    display: inline-block;
+
+    height: 100%;
+    margin: auto;
+    padding: 0 20px;
+
+    cursor: auto;
+    text-align: left;
+
+    color: #2f545f;
+    background-color: white;
+}
 
 /* Contact me */
 
@@ -260,8 +218,6 @@ figure.effect-sadie:hover p {
 
     opacity: .95;
     background: #728590;
-
-    grid-template-columns: 1fr;
 }
 
 .contact a
@@ -290,8 +246,7 @@ footer a
     color: #728590;
 }
 
-
-/* Media Queries */
+/* Media Queries and mobile navigation */
 
 @media(min-width: 701px)
 {
@@ -299,9 +254,9 @@ footer a
     {
         grid-template-columns: repeat(10, 1fr);
         grid-template-areas:
-          "a a a a a a b b b b"
-          "a a a a a a b b b b"
-          "a a a a a a c c c c";
+        'a a a a a a b b b b'
+        'a a a a a a b b b b'
+        'a a a a a a c c c c';
     }
 
     .grid
@@ -342,8 +297,8 @@ footer a
     {
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas:
-          "a a "
-          "b c";
+        'a a '
+        'b c';
     }
     body
     {
@@ -389,7 +344,7 @@ footer a
 
         transition: transform .3s ease-in-out;
 
-        background: #C3DBC5;
+        background: #c3dbc5;
     }
 
     #nav:target
@@ -407,11 +362,6 @@ footer a
 
         grid-gap: 20px;
         grid-template-columns: 1fr;
-    }
-
-    .opacity-body
-    {
-        opacity: 1;
     }
 
     .open
@@ -432,7 +382,6 @@ footer a
         text-decoration: none;
         text-transform: uppercase;
 
-        opacity: .9;
         color: #fff;
         background-color: #2f3238;
     }

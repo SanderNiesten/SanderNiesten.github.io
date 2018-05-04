@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,32 +12,33 @@
 
   <title>Portfolio by Sander Niesten</title>
 </head>
+
 <body>
   <div class="grid">
 
     <!-- Navigation -->
-    <a class="toggle open opacity-body" href="#nav"><i class="fas fa-bars"></i></a>
+    <a class="toggle open" href="#nav"><i class="fas fa-bars"></i></a>
 
     <nav id="nav">
       <a class="toggle close" href="#">X</a>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
 
     <!-- About Section -->
-    <section class="about opacity-body" id="about">
-      <div class= "a" id="about-text">
+    <section class="about" id="about">
+      <div class="a">
         <h1>Sander Niesten</h1>
         <p>Hi! I'm Sander a 29-year-old (on my way to be) webdeveloper from the Haarlem area. End of 2017 I suddenly bumped into my new &hearts; : programming! So I decided to give my life a new course and have not regretted it ever since.
-        <br>
-        <br>
-        The last four months have been an epic adventure. A five week bootcamp at Codaisseur, looking into Ruby, Rails, SQL, Javascript, test driven development and so much more. Next, I got my first taste of React through Codecademy and build my first 2 React app's and a cool little minesweeper game. The FreeCodeCamp course is now on my menu. And in the future? Hopefully a traineeship and much more cool stuff to learn!</p>
+          <br>
+          <br> The last five months have been an epic adventure. A five week bootcamp at Codaisseur, looking into Ruby, Rails, SQL, Javascript, test driven development and so much more. Next, I got my first taste of React through Codecademy and build
+          my first 2 React app's and a cool little minesweeper game. The FreeCodeCamp course is now on my menu. And in the future? Hopefully a traineeship and much more cool stuff to learn!</p>
       </div>
       <div class="b">
-        <img id="profile-picture" src="profile picture.jpg" alt="">
+        <img id="profile-picture" src="profile picture.jpg" alt="Face of Sander Niesten">
       </div>
       <div class="c">
         <a href="https://drive.google.com/file/d/1odhMzbhEHV1aLQBCBzsd6M2AWEO2X8bW/view?usp=sharing" target="_blank"><i class="far fa-file-alt"></i></a>
@@ -44,63 +46,42 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section class="portfolio opacity-body" id="portfolio">
-
-      <figure class="effect-lily">
-        <img src="jammming.png" alt="">
+    <section class="portfolio" id="portfolio">
+      <figure>
+        <a href="https://github.com/SanderNiesten/ravenous" target="_blank"><img src="ravenous.png" alt="Frontpage of yelp-like website"></a>
         <figcaption>
-          <h2>Nice <span>Lily</span></h2>
-          <p>Lily likes to play with crayons and pencils</p>
-          <a href="#">View more</a>
+          <p>RAVENOUS - A Yelp-like web application build in React using real-world data from the Yelp API.</p>
         </figcaption>
       </figure>
 
+      <figure>
+        <a href="https://github.com/SanderNiesten/ravenous" target="_blank"><img src="jammming.png" alt="Frontpage of an app to make music playlists"></a>
+        <figcaption>
+          <p>JAMMMING - A web application build in React using the Spotify API to let users login and create, edit and save their own playlists.</p>
+        </figcaption>
+      </figure>
 
+      <figure>
+        <a href="https://github.com/SanderNiesten/minesweeperjs" target="_blank"><img src="minesweeper.png" alt="Javascript code for a minesweeper game"></a>
+        <figcaption>
+          <div>
+            <p>MINESWEEPER - The game we all know, written in Javascript and running in node. Make your own board and play!</p>
+          </div>
+        </figcaption>
+      </figure>
 
-          <figure class="hover-portfolio">
-						      <img src="jammming.png" alt="">
-						<figcaption>
-							<h4><span>Ravenous</span></h4>
-							<div>
-								<p>Julia dances in the deep dark</p>
-								<p>She loves the smell of the ocean</p>
-								<p>And dives into the morning light</p>
-                <p>And dives into the something</p>
-                <p>And dives into the something</p>
-							</div>
-						</figcaption>
-					</figure>
-          <figure class="hover-portfolio">
-						      <img src="jammming.png" alt="">
-						<figcaption>
-							<h4><span>Minesweeper</span></h4>
-							<div>
-								<p>Julia dances in the deep dark</p>
-								<p>She loves the smell of the ocean</p>
-								<p>And dives into the morning light</p>
-                <p>And dives into the something</p>
-							</div>
-							<a href="#">View more</a>
-						</figcaption>
-					</figure>
-          <figure class="hover-portfolio">
-						      <img src="jammming.png" alt="">
-						<figcaption>
-							<h4><span>Ravenous</span></h4>
-							<div>
-								<p>Julia dances in the deep dark</p>
-								<p>She loves the smell of the ocean</p>
-								<p>And dives into the morning light</p>
-                <p>And dives into the something</p>
-							</div>
-							<a href="#">View more</a>
-						</figcaption>
-					</figure>
+      <figure>
+        <a href="https://github.com/SanderNiesten?tab=repositories" target="_blank"><img src="codaisseur-projects.png" alt="Database code for a app"></a>
+        <figcaption>
+          <div>
+            <p>CODAISSEUR - 5 week bootcamp, during which I learned the fundamentals of programming and worked with Ruby, Rails, Javascript, SQLite and learned a bit of TDD.</p>
+          </div>
+        </figcaption>
+      </figure>
     </section>
 
-
     <!-- Contact Section -->
-    <section class="contact opacity-body" id="contact">
+    <section class="contact" id="contact">
       <div>
         <h2>Contact me</h2>
         <p>Coffee, pizza? Or do you have any interesting stories about surfing, coding or the universe itself?! I'm often in Haarlem and Amsterdam, so don't hesitate to hit me up. Either through social media or my <a href="mailto:sanderniesten@live.nl?Subject=Coffee?%20" target="_top">e-mail</a>.</p>
@@ -109,15 +90,15 @@
 
     <!-- Footer -->
     <footer>
-      <div class="social opacity-body">
+      <div class="social">
         <a href="https://github.com/SanderNiesten?tab=repositories" target="_blank"><i class="fab fa-github-square fa-3x"></i></a>
         <a href="https://www.linkedin.com/in/sanderniesten/" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
         <a href="https://m.me/sanderniesten" target="_blank"><i class="fab fa-facebook-messenger fa-3x"></i></a>
       </div>
       <div>Sander Niesten &copy; 2018</div>
-
     </footer>
   </div>
-    <!-- Grid Ends-->
+  <!-- Grid Ends-->
 </body>
+
 </html>
